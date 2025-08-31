@@ -28,32 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            button2 = new Button();
+            button_NewTemp = new Button();
+            buttonEdition = new Button();
             ConfigurationPanel = new Panel();
             groupBox1 = new GroupBox();
-            textBox1 = new TextBox();
+            textVisualBox = new TextBox();
             ConfigurationPanel.SuspendLayout();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
-            // button1
+            // button_NewTemp
             // 
-            button1.Location = new Point(6, 49);
-            button1.Name = "button1";
-            button1.Size = new Size(202, 34);
-            button1.TabIndex = 0;
-            button1.Text = "Nouveau Template";
-            button1.UseVisualStyleBackColor = true;
+            button_NewTemp.Location = new Point(6, 49);
+            button_NewTemp.Name = "button_NewTemp";
+            button_NewTemp.Size = new Size(202, 34);
+            button_NewTemp.TabIndex = 0;
+            button_NewTemp.Text = "Nouveau Template";
+            button_NewTemp.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // buttonEdition
             // 
-            button2.Location = new Point(228, 49);
-            button2.Name = "button2";
-            button2.Size = new Size(112, 34);
-            button2.TabIndex = 1;
-            button2.Text = "Editer";
-            button2.UseVisualStyleBackColor = true;
+            buttonEdition.Location = new Point(228, 49);
+            buttonEdition.Name = "buttonEdition";
+            buttonEdition.Size = new Size(112, 34);
+            buttonEdition.TabIndex = 1;
+            buttonEdition.Text = "Editer";
+            buttonEdition.UseVisualStyleBackColor = true;
+            buttonEdition.Click += button2_Click;
             // 
             // ConfigurationPanel
             // 
@@ -65,8 +66,8 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(button1);
-            groupBox1.Controls.Add(button2);
+            groupBox1.Controls.Add(button_NewTemp);
+            groupBox1.Controls.Add(buttonEdition);
             groupBox1.Location = new Point(12, 21);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(391, 244);
@@ -75,23 +76,23 @@
             groupBox1.Text = "Parametres";
             groupBox1.Enter += groupBox1_Enter;
             // 
-            // textBox1
+            // textVisualBox
             // 
-            textBox1.Location = new Point(791, 59);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.ScrollBars = ScrollBars.Both;
-            textBox1.Size = new Size(825, 570);
-            textBox1.TabIndex = 3;
-            textBox1.TextChanged += textBox1_TextChanged;
+            textVisualBox.Location = new Point(802, 80);
+            textVisualBox.Multiline = true;
+            textVisualBox.Name = "textVisualBox";
+            textVisualBox.ReadOnly = true;
+            textVisualBox.ScrollBars = ScrollBars.Both;
+            textVisualBox.Size = new Size(825, 570);
+            textVisualBox.TabIndex = 3;
+            textVisualBox.TextChanged += textBox1_TextChanged;
             // 
             // MainWindows
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1676, 730);
-            Controls.Add(textBox1);
+            Controls.Add(textVisualBox);
             Controls.Add(ConfigurationPanel);
             Name = "MainWindows";
             Text = "TemplateSwitch";
@@ -104,10 +105,10 @@
 
         #endregion
 
-        private Button button1;
-        private Button button2;
+        private Button button_NewTemp;
+        private Button buttonEdition;
         private Panel ConfigurationPanel;
         private GroupBox groupBox1;
-        private TextBox textBox1;
+        private TextBox textVisualBox;
     }
 }
