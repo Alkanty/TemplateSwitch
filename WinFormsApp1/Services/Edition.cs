@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace WinFormsApp1.Services
 {
-    internal class Edition
+    public class Edition
     {
-//PAS TERMINE
-        private void OpenFile()
+        //PAS TERMINE
+        public static void OpenFileBox(TextBox box)
         {
             // Creation d'un nouvel objet OpenFileDialog appelé OpenBox
             OpenFileDialog OpenBox = new OpenFileDialog();
@@ -20,12 +20,14 @@ namespace WinFormsApp1.Services
             {
                 // Lire le contenu du fichier et l’afficher dans la TextBox
                 string contenu = System.IO.File.ReadAllText(OpenBox.FileName);
-                textVisualBox.Text = contenu;
+                box.Text = contenu;
 
             }
-            
 
+
+        }
+    }
 }
 
-    }
+    
 
