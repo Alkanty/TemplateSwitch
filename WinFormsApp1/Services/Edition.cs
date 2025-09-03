@@ -9,11 +9,14 @@ namespace WinFormsApp1.Services
 {
     public class Edition
     {
-        static string local_template_path = "C:\\Users\\Kyria\\AppData\\Local\\WinformApp\\Templates";
+        //var to get local usersession name
+        static string username = Environment.UserName;
+        //var for local path 
+        static string local_template_path = $"C:\\Users\\{username}\\AppData\\Local\\WinformApp\\Templates";
 
         public static void NewTemplate()
         {
-            //fonctionne pas 
+            //create local directory for templates 
             FileSystem.CreateDirectory(local_template_path);
             MessageBox.Show("Debug : bouton_NewTemp a été cliqué !");
 
@@ -21,7 +24,7 @@ namespace WinFormsApp1.Services
 
         public static void OpenFileBox(TextBox box)
         {
-            // Creation d'un nouvel objet OpenFileDialog appelé OpenBox
+            // Creation of a new object OpenFileDialog called OpenBox
             OpenFileDialog OpenBox = new OpenFileDialog();
             OpenBox.Filter = "Fichiers texte (*.txt)|*.txt|Tous les fichiers (*.*)|*.*";
             OpenBox.Title = "Choisir un fichier texte";
