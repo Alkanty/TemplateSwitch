@@ -14,17 +14,14 @@ namespace WinFormsApp1.Services
     {
         //var to get local usersession name
         static string username = Environment.UserName;
-        //var for local path for templates
+        //var for local path 
         static string local_template_path = $"C:\\Users\\{username}\\AppData\\Local\\WinformApp\\Templates";
 
         public static void NewTemplate(TextBox box)
         {
             //create local directory for templates 
-            string newfile = "New_template.txt";
-            Directory.CreateDirectory(local_template_path);
-
-            if (File.Exists($"{local_template_path}\\{newfile}") == true) { MessageBox.Show("Debug : Le fichier existe"); }
-            else { MessageBox.Show("Debug : Le fichier n'existe pas,création en cours...");File.Create($"{local_template_path}\\{newfile}");}
+            FileSystem.CreateDirectory(local_template_path);
+            MessageBox.Show("Debug : bouton_NewTemp a été cliqué !");
 
             string contenu = System.IO.File.ReadAllText(newfile);
             box.Text = contenu;
@@ -32,7 +29,7 @@ namespace WinFormsApp1.Services
 
         public static void OpenFileBox(TextBox box)
         {
-            // Creation of a new object OpenFileDialog called OpenBox
+            // Creation d'un nouvel objet OpenFileDialog appelé OpenBox
             OpenFileDialog OpenBox = new OpenFileDialog();
             OpenBox.Filter = "Fichiers texte (*.txt)|*.txt|Tous les fichiers (*.*)|*.*";
             OpenBox.Title = "Choisir un fichier texte";

@@ -45,7 +45,7 @@
             button_NewTemp.TabIndex = 0;
             button_NewTemp.Text = "Nouveau Template";
             button_NewTemp.UseVisualStyleBackColor = true;
-            button_NewTemp.Click += button1_Click;
+            buttonEdition.Click += button1_Click;
             // 
             // buttonEdition
             // 
