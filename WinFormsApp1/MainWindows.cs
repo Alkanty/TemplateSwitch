@@ -38,9 +38,10 @@ namespace WinFormsApp1
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        //BUTTON FOR NEW TEMPLATE
+        private void button1_Click(object sender, EventArgs e)
         {
-            Edition.NewTemplate(textVisual);
+            Edition.NewTemplate();
         }
 
         //BUTTON FOR EDITING
