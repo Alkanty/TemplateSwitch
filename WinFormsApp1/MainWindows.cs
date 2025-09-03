@@ -40,7 +40,7 @@ namespace WinFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Edition.NewTemplate();
+            Edition.NewTemplate(textVisual);
         }
 
         //BUTTON FOR EDITING
