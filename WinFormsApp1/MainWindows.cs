@@ -33,7 +33,7 @@ namespace WinFormsApp1
 
 
         //TEXTBOX FOR VISUAL 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        public void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -41,7 +41,7 @@ namespace WinFormsApp1
         //BUTTON FOR NEW TEMPLATE
         private void button1_Click(object sender, EventArgs e)
         {
-            Edition.NewTemplate();
+            Edition.NewTemplate(textVisualBox);
         }
 
         //BUTTON FOR EDITING
