@@ -46,10 +46,30 @@ namespace WinFormsApp1
 
         //BUTTON FOR EDITING
         private void button2_Click(object sender, EventArgs e)
-         
+
         {
             //appel de la methode pour ouvrir l'onglet de chargement fichier + affichage dans textbox 
             Edition.OpenFileBox(textVisualBox);
+        }
+
+        private void comboBox_Constructor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Ici tu mets ce qui doit se passer quand on change de modèle
+            MessageBox.Show("Tu as changé de modèle !");
+        }
+
+
+        private void comboBox_Model_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Ici tu mets ce qui doit se passer quand on change de modèle
+            MessageBox.Show("Tu as changé de modèle !");
+        }
+
+
+        private void comboBox_Version_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Ici tu mets ce qui doit se passer quand on change de modèle
+            MessageBox.Show("Tu as changé de modèle !");
         }
     }
 }

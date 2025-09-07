@@ -33,15 +33,19 @@
             ConfigurationPanel = new Panel();
             groupBox1 = new GroupBox();
             textVisualBox = new TextBox();
+            comboBox_Constructor = new ComboBox();
+            comboBox_Model = new ComboBox();
+            comboBox_Version = new ComboBox();
             ConfigurationPanel.SuspendLayout();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // button_NewTemp
             // 
-            button_NewTemp.Location = new Point(6, 49);
+            button_NewTemp.Location = new Point(5, 39);
+            button_NewTemp.Margin = new Padding(2, 2, 2, 2);
             button_NewTemp.Name = "button_NewTemp";
-            button_NewTemp.Size = new Size(202, 34);
+            button_NewTemp.Size = new Size(162, 27);
             button_NewTemp.TabIndex = 0;
             button_NewTemp.Text = "Nouveau Template";
             button_NewTemp.UseVisualStyleBackColor = true;
@@ -49,9 +53,10 @@
             // 
             // buttonEdition
             // 
-            buttonEdition.Location = new Point(228, 49);
+            buttonEdition.Location = new Point(265, 39);
+            buttonEdition.Margin = new Padding(2, 2, 2, 2);
             buttonEdition.Name = "buttonEdition";
-            buttonEdition.Size = new Size(112, 34);
+            buttonEdition.Size = new Size(90, 27);
             buttonEdition.TabIndex = 1;
             buttonEdition.Text = "Editer";
             buttonEdition.UseVisualStyleBackColor = true;
@@ -60,18 +65,24 @@
             // ConfigurationPanel
             // 
             ConfigurationPanel.Controls.Add(groupBox1);
-            ConfigurationPanel.Location = new Point(51, 59);
+            ConfigurationPanel.Location = new Point(41, 47);
+            ConfigurationPanel.Margin = new Padding(2, 2, 2, 2);
             ConfigurationPanel.Name = "ConfigurationPanel";
-            ConfigurationPanel.Size = new Size(522, 324);
+            ConfigurationPanel.Size = new Size(418, 259);
             ConfigurationPanel.TabIndex = 2;
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(comboBox_Version);
+            groupBox1.Controls.Add(comboBox_Model);
+            groupBox1.Controls.Add(comboBox_Constructor);
             groupBox1.Controls.Add(button_NewTemp);
             groupBox1.Controls.Add(buttonEdition);
-            groupBox1.Location = new Point(12, 21);
+            groupBox1.Location = new Point(10, 17);
+            groupBox1.Margin = new Padding(2, 2, 2, 2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(391, 244);
+            groupBox1.Padding = new Padding(2, 2, 2, 2);
+            groupBox1.Size = new Size(375, 193);
             groupBox1.TabIndex = 2;
             groupBox1.TabStop = false;
             groupBox1.Text = "Parametres";
@@ -79,22 +90,54 @@
             // 
             // textVisualBox
             // 
-            textVisualBox.Location = new Point(802, 80);
+            textVisualBox.Location = new Point(630, 64);
+            textVisualBox.Margin = new Padding(2, 2, 2, 2);
             textVisualBox.Multiline = true;
             textVisualBox.Name = "textVisualBox";
             textVisualBox.ReadOnly = true;
             textVisualBox.ScrollBars = ScrollBars.Both;
-            textVisualBox.Size = new Size(825, 570);
+            textVisualBox.Size = new Size(661, 457);
             textVisualBox.TabIndex = 3;
             textVisualBox.TextChanged += textBox1_TextChanged;
             // 
+            // comboBox_Constructor
+            // 
+            comboBox_Constructor.FormattingEnabled = true;
+            comboBox_Constructor.Location = new Point(204, 81);
+            comboBox_Constructor.Name = "comboBox_Constructor";
+            comboBox_Constructor.Size = new Size(151, 28);
+            comboBox_Constructor.TabIndex = 2;
+            comboBox_Constructor.Text = "Constructeur";
+            comboBox_Constructor.SelectedIndexChanged += comboBox_Constructor_SelectedIndexChanged;
+            // 
+            // comboBox_Model
+            // 
+            comboBox_Model.FormattingEnabled = true;
+            comboBox_Model.Location = new Point(204, 115);
+            comboBox_Model.Name = "comboBox_Model";
+            comboBox_Model.Size = new Size(151, 28);
+            comboBox_Model.TabIndex = 3;
+            comboBox_Model.Text = "Modèle";
+            comboBox_Model.SelectedIndexChanged += this.comboBox_Model_SelectedIndexChanged;
+            // 
+            // comboBox_Version
+            // 
+            comboBox_Version.FormattingEnabled = true;
+            comboBox_Version.Location = new Point(204, 149);
+            comboBox_Version.Name = "comboBox_Version";
+            comboBox_Version.Size = new Size(151, 28);
+            comboBox_Version.TabIndex = 4;
+            comboBox_Version.Text = "Version";
+            comboBox_Version.SelectedIndexChanged += this.comboBox_Version_SelectedIndexChanged;
+            // 
             // MainWindows
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1676, 730);
+            ClientSize = new Size(1341, 584);
             Controls.Add(textVisualBox);
             Controls.Add(ConfigurationPanel);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "MainWindows";
             Text = "TemplateSwitch";
             Load += Form1_Load;
@@ -111,5 +154,8 @@
         private Panel ConfigurationPanel;
         private GroupBox groupBox1;
         private TextBox textVisualBox;
+        private ComboBox comboBox_Version;
+        private ComboBox comboBox_Model;
+        private ComboBox comboBox_Constructor;
     }
 }
