@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualBasic.FileIO;
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Diagnostics.Eventing.Reader;
 using System.Linq;
@@ -12,11 +13,20 @@ namespace WinFormsApp1.Services
 {
     public class Edition
     {
-        //var to get local usersession name
-        static string username = Environment.UserName;
+        //var to get main directory
+        static string main_dir_path = AppContext.BaseDirectory;
+
         //var for local path for templates
         static string local_template_path = $"C:\\Users\\{username}\\AppData\\Local\\WinformApp\\Templates";
 
+        //var to get local usersession name
+        static string username = Environment.UserName;
+
+        //var for Path constructor
+        static string local_constructor_path = Path.Combine(main_dir_path, "ConstructorTemplates");
+
+
+        //METHOD FOR CREATING A NEW BLANK FILE AND SHOW IT IN EDITOR
         public static void NewTemplate(System.Windows.Forms.TextBox box)
         {
             //create local directory for templates 
@@ -31,8 +41,9 @@ namespace WinFormsApp1.Services
             string contenu = File.ReadAllText($"{local_template_path}\\{newfile}");
             box.Text = contenu;
 
-        }   
-  
+        }
+
+        //METHOD FOR EDITING A FILE
         public static void OpenFileBox(System.Windows.Forms.TextBox box)
         {
             // Creation of a new object OpenFileDialog called OpenBox
