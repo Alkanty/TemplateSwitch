@@ -21,6 +21,7 @@ namespace WinFormsApp1
             InitializeComponent();
         }
 
+        //METHOD WHEN LOADING
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -38,13 +39,13 @@ namespace WinFormsApp1
 
         }
 
-        //BUTTON FOR NEW TEMPLATE
+        //BUTTON FOR NEW TEMPLATE ON CLICK
         private void button1_Click(object sender, EventArgs e)
         {
             Edition.NewTemplate(textVisualBox);
         }
 
-        //BUTTON FOR EDITING
+        //BUTTON FOR EDITING ON CLICK
         private void button2_Click(object sender, EventArgs e)
 
         {
@@ -52,20 +53,21 @@ namespace WinFormsApp1
             Edition.OpenFileBox(textVisualBox);
         }
 
+        //SCROLL DOWN LIST FOR CHOOSING CONSTRUCTOR TYPE
         private void comboBox_Constructor_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Ici tu mets ce qui doit se passer quand on change de modèle
-            MessageBox.Show("Tu as changé de modèle !");
+            Edition.LoadFile(comboBox_Constructor);
         }
 
-
+        //SCROLL DOWN LIST FOR CHOOSING MODEL TYPE
         private void comboBox_Model_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Ici tu mets ce qui doit se passer quand on change de modèle
             MessageBox.Show("Tu as changé de modèle !");
         }
 
-
+        //SCROLL DOWN LIST FOR CHOOSING VERSION TYPE
         private void comboBox_Version_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Ici tu mets ce qui doit se passer quand on change de modèle

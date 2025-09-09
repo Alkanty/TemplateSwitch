@@ -32,10 +32,10 @@ namespace WinFormsApp1.Services
             //create local directory for templates 
             string newfile = "New_template.txt";
             Directory.CreateDirectory(local_template_path);
-            
+
             //if file exist nothing else create it
             if (File.Exists($"{local_template_path}\\{newfile}") == true) { MessageBox.Show("Debug : Le fichier existe"); }
-            else { MessageBox.Show("Debug : Le fichier n'existe pas,création en cours...");File.Create($"{local_template_path}\\{newfile}");}
+            else { MessageBox.Show("Debug : Le fichier n'existe pas,création en cours..."); File.Create($"{local_template_path}\\{newfile}"); }
 
             // read the content of a file and show it on the text box.
             string contenu = File.ReadAllText($"{local_template_path}\\{newfile}");
@@ -62,8 +62,29 @@ namespace WinFormsApp1.Services
 
 
         }
+
+        //METHOD FOR LOADING FOLDER
+        public static void LoadFile(System.Windows.Forms.ComboBox box)
+        {
+            //clears the combo box
+            box.Items.Clear();
+
+            //if directory with the ConstructorTemplates folder exists...
+            if (Directory.Exists(local_constructor_path))
+            {
+                //we keep all the subdirectory of ConstructorTemplates folder, we select only the names, and we put them in an array.
+                var constructeur = Directory.GetDirectories(local_constructor_path).Select(path => Path.GetFileName(path)!).ToArray();
+
+                //add the array to the box
+                box.Items.AddRange(constructeur);
+            }
+            else { MessageBox.Show("Debug : Le dossier n'existe pas"); }
+
+        }
+        
     }
 }
+
 
     
 
