@@ -23,7 +23,7 @@ namespace WinFormsApp1.Services
         static string username = Environment.UserName;
 
         //var for Path constructor
-        static string local_constructor_path = Path.Combine(main_dir_path, "ConstructorTemplates");
+        static string local_constructor_path = Path.Combine(Directory.GetParent(main_dir_path)!.Parent!.Parent!.Parent!.FullName, "ConstructorTemplates");
 
 
         //METHOD FOR CREATING A NEW BLANK FILE AND SHOW IT IN EDITOR
@@ -78,7 +78,7 @@ namespace WinFormsApp1.Services
                 //add the array to the box
                 box.Items.AddRange(constructeur);
             }
-            else { MessageBox.Show("Debug : Le dossier n'existe pas"); }
+            else { MessageBox.Show($"Debug : Le dossier {local_constructor_path} n'existe pas"); }
 
         }
         

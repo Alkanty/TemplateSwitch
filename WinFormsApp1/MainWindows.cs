@@ -24,7 +24,8 @@ namespace WinFormsApp1
         //METHOD WHEN LOADING
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            // Ici tu mets ce qui doit se passer quand on change de constructeur
+            Edition.LoadFile(comboBox_Constructor);
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -56,7 +57,7 @@ namespace WinFormsApp1
         //SCROLL DOWN LIST FOR CHOOSING CONSTRUCTOR TYPE
         private void comboBox_Constructor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Ici tu mets ce qui doit se passer quand on change de modèle
+            // Ici tu mets ce qui doit se passer quand on change de constructeur
             Edition.LoadFile(comboBox_Constructor);
         }
 
