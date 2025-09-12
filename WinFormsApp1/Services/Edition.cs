@@ -34,8 +34,15 @@ namespace WinFormsApp1.Services
             Directory.CreateDirectory(local_template_path);
 
             //if file exist nothing else create it
-            if (File.Exists($"{local_template_path}\\{newfile}") == true) { MessageBox.Show("Debug : Le fichier existe"); }
-            else { MessageBox.Show("Debug : Le fichier n'existe pas,création en cours..."); File.Create($"{local_template_path}\\{newfile}"); }
+            if (File.Exists($"{local_template_path}\\{newfile}") == true) 
+            { 
+                MessageBox.Show("Debug : Le fichier existe"); 
+            }
+            else 
+            {
+                Logger.WriteLog("Debug : Le fichier n'existe pas,création en cours..."); 
+                File.Create($"{local_template_path}\\{newfile}"); 
+            }
 
             // read the content of a file and show it on the text box.
             string contenu = File.ReadAllText($"{local_template_path}\\{newfile}");
