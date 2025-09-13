@@ -73,8 +73,7 @@ namespace WinFormsApp1
         //SCROLL DOWN LIST FOR CHOOSING CONSTRUCTOR TYPE
         private void comboBox_Constructor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Ici tu mets ce qui doit se passer quand on change de constructeur
-            Edition.LoadFile(comboBox_Constructor);
+
         }
 
         //SCROLL DOWN LIST FOR CHOOSING MODEL TYPE

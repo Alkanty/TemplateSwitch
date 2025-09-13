@@ -75,6 +75,7 @@ namespace WinFormsApp1.Services
         {
             //clears the combo box
             box.Items.Clear();
+
             //if directory with the ConstructorTemplates folder exists...
             if (Directory.Exists(local_constructor_path))
             {
@@ -83,6 +84,7 @@ namespace WinFormsApp1.Services
 
                 //add the array to the box
                 box.Items.AddRange(constructeur);
+
             }
             else { Logger.WriteLog($"Debug : Le dossier {local_constructor_path} n'existe pas");MessageBox.Show($" Le dossier {local_constructor_path} n'existe pas"); }
 

@@ -112,12 +112,12 @@
             // 
             // comboBox_Constructor
             // 
+            comboBox_Constructor.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_Constructor.FormattingEnabled = true;
             comboBox_Constructor.Location = new Point(204, 81);
             comboBox_Constructor.Name = "comboBox_Constructor";
             comboBox_Constructor.Size = new Size(151, 28);
             comboBox_Constructor.TabIndex = 2;
-            comboBox_Constructor.Text = "Constructeur";
             comboBox_Constructor.SelectedIndexChanged += comboBox_Constructor_SelectedIndexChanged;
             // 
             // textVisualBox
