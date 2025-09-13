@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="ConstuctorTemplates\Aruba\2930\V1\" />
+    <Folder Include="ConstructorTemplates\Aruba\2930\V1\" />
   </ItemGroup>
 
   <ItemGroup>
