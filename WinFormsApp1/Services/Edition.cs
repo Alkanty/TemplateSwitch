@@ -36,11 +36,11 @@ namespace WinFormsApp1.Services
             //if file exist nothing else create it
             if (File.Exists($"{local_template_path}\\{newfile}") == true) 
             { 
-                MessageBox.Show("Debug : Le fichier existe"); 
+               Logger.WriteLog($"Debug : Le fichier {newfile} existe");
             }
             else 
             {
-                Logger.WriteLog("Debug : Le fichier n'existe pas,création en cours..."); 
+                Logger.WriteLog($"Debug : Le fichier {newfile} n'existe pas,création en cours..."); 
                 File.Create($"{local_template_path}\\{newfile}"); 
             }
 
@@ -85,7 +85,7 @@ namespace WinFormsApp1.Services
                 //add the array to the box
                 box.Items.AddRange(constructeur);
             }
-            else { MessageBox.Show($"Debug : Le dossier {local_constructor_path} n'existe pas"); }
+            else { Logger.WriteLog($"Debug : Le dossier {local_constructor_path} n'existe pas"); }
 
         }
         
