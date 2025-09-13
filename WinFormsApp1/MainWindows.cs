@@ -1,5 +1,6 @@
 
 
+using System.Diagnostics;
 using WinFormsApp1.Services;
 
 ////NOMENCLATURE////
@@ -7,7 +8,7 @@ using WinFormsApp1.Services;
 // VARIABLE = LOWER CASE
 // COMMENT ALWAYS ON ONE LINE : BRIEF IN ONE SENTENCE ON TOP OF THE ELEMENT DESCRIBE
 //COMMENT OF METHOD CAPITAL LETTER COMMENT OF CODE LOWERCASE
-// {} JUMP A LIGNE AFTER LINKED CLASS/METHOD/LOOP BUT SAME LEVEL +
+// {} JUMP A LIGNE AFTER LINKED CLASS/METHOD/LOOP BMUT SAME LEVEL +
 // INDENTING AFTER {}
 // CONDITION EXCEPTION(switch,if,) : ALL ON ONE LINE
 
@@ -54,6 +55,21 @@ namespace WinFormsApp1
             Edition.OpenFileBox(textVisualBox);
         }
 
+        //BUTTON FOR OPENING DEBUG FILE ON CLICK
+        private void button_debug_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // open the log file with default text editor
+                Process.Start(new ProcessStartInfo("debug_log.txt") { UseShellExecute = true });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de l'ouverture du fichier de log : " + ex.Message);
+                Logger.WriteLog("Erreur lors de l'ouverture du fichier de log : " + ex.Message);
+            }
+        }
+
         //SCROLL DOWN LIST FOR CHOOSING CONSTRUCTOR TYPE
         private void comboBox_Constructor_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -74,5 +90,7 @@ namespace WinFormsApp1
             // Ici tu mets ce qui doit se passer quand on change de modèle
             MessageBox.Show("Tu as changé de modèle !");
         }
+
+
     }
 }

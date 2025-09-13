@@ -28,7 +28,6 @@ namespace WinFormsApp1.Services
 
             }
 
-
             else 
             { 
                 //create file called debug_log.txt
@@ -39,6 +38,8 @@ namespace WinFormsApp1.Services
                 File.AppendAllText(logfile, line + Environment.NewLine);
 
             }
+
+
         }
                 
 
