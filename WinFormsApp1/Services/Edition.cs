@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
- 
+
 namespace WinFormsApp1.Services
 {
     public class Edition
@@ -22,8 +22,7 @@ namespace WinFormsApp1.Services
         //var to get local usersession name
         static string username = Environment.UserName;
 
-        //var for Path constructor
-        static string local_constructor_path = Path.Combine(Directory.GetParent(main_dir_path)!.Parent!.Parent!.Parent!.FullName,"ConstructorTemplates");
+
 
 
         //METHOD FOR CREATING A NEW BLANK FILE AND SHOW IT IN EDITOR
@@ -34,14 +33,14 @@ namespace WinFormsApp1.Services
             Directory.CreateDirectory(local_template_path);
 
             //if file exist nothing else create it
-            if (File.Exists($"{local_template_path}\\{newfile}") == true) 
-            { 
-               Logger.WriteLog($"Debug : Le fichier {newfile} existe");
-            }
-            else 
+            if (File.Exists($"{local_template_path}\\{newfile}") == true)
             {
-                Logger.WriteLog($"Debug : Le fichier {newfile} n'existe pas,création en cours..."); 
-                File.Create($"{local_template_path}\\{newfile}"); 
+                Logger.WriteLog($"Debug : Le fichier {newfile} existe");
+            }
+            else
+            {
+                Logger.WriteLog($"Debug : Le fichier {newfile} n'existe pas,création en cours...");
+                File.Create($"{local_template_path}\\{newfile}");
             }
 
             // read the content of a file and show it on the text box.
@@ -70,9 +69,11 @@ namespace WinFormsApp1.Services
 
         }
 
-        //METHOD FOR LOADING FOLDER
-        public static void LoadFile(System.Windows.Forms.ComboBox box)
+        //METHOD FOR LOADING FOLDER FOR CONSTRUCTOR COMBOBOX
+        public static void LoadFileConstructor(System.Windows.Forms.ComboBox box)
         {
+            //var for Path constructor
+            string local_constructor_path = Path.Combine(Directory.GetParent(main_dir_path)!.Parent!.Parent!.Parent!.FullName, "ConstructorTemplates");
             //clears the combo box
             box.Items.Clear();
 
@@ -86,10 +87,31 @@ namespace WinFormsApp1.Services
                 box.Items.AddRange(constructeur);
 
             }
-            else { Logger.WriteLog($"Debug : Le dossier {local_constructor_path} n'existe pas");MessageBox.Show($" Le dossier {local_constructor_path} n'existe pas"); }
+            else { Logger.WriteLog($"Debug : Le dossier {local_constructor_path} n'existe pas"); MessageBox.Show($" Le dossier {local_constructor_path} n'existe pas"); }
 
         }
-        
+        //METHOD FOR LOADING FOLDER FOR OTHER COMBOBOX
+        public static void LoadFileModel(System.Windows.Forms.ComboBox box, System.Windows.Forms.ComboBox box2)
+        {
+
+            //var for Path model
+            string local_model_path = Path.Combine(Directory.GetParent(main_dir_path)!.Parent!.Parent!.Parent!.FullName, box.SelectedText);
+            //clears the combo box
+            box.Items.Clear();
+
+            MessageBox.Show($" Le dossier {local_model_path} ");
+            //if directory with the ConstructorTemplates folder exists...
+            if (Directory.Exists(local_model_path))
+            {
+                //we keep all the subdirectory of ConstructorTemplates folder, we select only the names, and we put them in an array.
+                var model = Directory.GetDirectories(local_model_path).Select(path => Path.GetFileName(path)!).ToArray();
+
+                //add the array to the box
+                box2.Items.AddRange(model);
+
+            }
+            else { Logger.WriteLog($"Debug : Le dossier {local_model_path} n'existe pas"); MessageBox.Show($" Le dossier {local_model_path} n'existe pas"); }
+        }
     }
 }
 
