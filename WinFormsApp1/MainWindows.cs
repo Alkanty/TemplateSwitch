@@ -1,6 +1,8 @@
 
 
+using System;
 using System.Diagnostics;
+using System.Drawing.Text;
 using WinFormsApp1.Services;
 
 ////NOMENCLATURE////
@@ -25,8 +27,8 @@ namespace WinFormsApp1
         //METHOD WHEN LOADING
         private void Form1_Load(object sender, EventArgs e)
         {
-            // Ici tu mets ce qui doit se passer quand on change de constructeur
             Edition.LoadFileConstructor(comboBox_Constructor);
+
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -58,22 +60,13 @@ namespace WinFormsApp1
         //BUTTON FOR OPENING DEBUG FILE ON CLICK
         private void button_debug_Click(object sender, EventArgs e)
         {
-            try
-            {
-                // open the log file with default text editor
-                Process.Start(new ProcessStartInfo("debug_log.txt") { UseShellExecute = true });
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erreur lors de l'ouverture du fichier de log : " + ex.Message);
-                Logger.WriteLog("Erreur lors de l'ouverture du fichier de log : " + ex.Message);
-            }
+            Logger.ButtonLog();
         }
 
         //SCROLL DOWN LIST FOR CHOOSING CONSTRUCTOR TYPE
         private void comboBox_Constructor_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+         Writting.WriteSelectedItemInbox(comboBox_Constructor, sender, e);
         }
 
         //SCROLL DOWN LIST FOR CHOOSING MODEL TYPE

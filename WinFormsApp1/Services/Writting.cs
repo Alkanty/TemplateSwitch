@@ -8,5 +8,12 @@ namespace WinFormsApp1.Services
 {
     public class Writting
     {
+        //METHOD FOR WRITTING IN SELECTED BOX
+        public static void WriteSelectedItemInbox(System.Windows.Forms.ComboBox box, object sender, EventArgs e)
+{
+        string selectedConstructor = box.SelectedItem.ToString();
+        Logger.WriteLog($"DEBUG:Selected constructor: {selectedConstructor}");
+}
+
     }
 }

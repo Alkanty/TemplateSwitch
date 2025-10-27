@@ -97,7 +97,7 @@ namespace WinFormsApp1.Services
             //var for Path model
             string local_model_path = Path.Combine(Directory.GetParent(main_dir_path)!.Parent!.Parent!.Parent!.FullName, box.SelectedText);
             //clears the combo box
-            box.Items.Clear();
+            box2.Items.Clear();
 
             MessageBox.Show($" Le dossier {local_model_path} ");
             //if directory with the ConstructorTemplates folder exists...
@@ -112,6 +112,7 @@ namespace WinFormsApp1.Services
             }
             else { Logger.WriteLog($"Debug : Le dossier {local_model_path} n'existe pas"); MessageBox.Show($" Le dossier {local_model_path} n'existe pas"); }
         }
+
     }
 }
 

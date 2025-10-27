@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -38,14 +39,22 @@ namespace WinFormsApp1.Services
                 File.AppendAllText(logfile, line + Environment.NewLine);
 
             }
-
-
         }
-                
 
-
-
-
+        //METHOD FOR LAUNCHING DEBUG 
+        public static void ButtonLog()
+        {
+            try
+            {
+                // open the log file with default text editor
+                Process.Start(new ProcessStartInfo("debug_log.txt") { UseShellExecute = true });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de l'ouverture du fichier de log : " + ex.Message);
+                Logger.WriteLog("Erreur lors de l'ouverture du fichier de log : " + ex.Message);
+            }
+        }
      }
 
 }
