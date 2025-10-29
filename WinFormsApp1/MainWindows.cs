@@ -29,6 +29,7 @@ namespace WinFormsApp1
         {
             Edition.LoadFileConstructor(comboBox_Constructor);
 
+
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -72,7 +73,7 @@ namespace WinFormsApp1
         //SCROLL DOWN LIST FOR CHOOSING MODEL TYPE
         private void comboBox_Model_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Edition.LoadFileModel(comboBox_Constructor, comboBox_Model);
+            Edition.LoadFileModel(, comboBox_Model);
         }
 
         //SCROLL DOWN LIST FOR CHOOSING VERSION TYPE

@@ -91,11 +91,11 @@ namespace WinFormsApp1.Services
 
         }
         //METHOD FOR LOADING FOLDER FOR OTHER COMBOBOX
-        public static void LoadFileModel(System.Windows.Forms.ComboBox box, System.Windows.Forms.ComboBox box2)
+        public static void LoadFileModel(string box, System.Windows.Forms.ComboBox box2)
         {
 
             //var for Path model
-            string local_model_path = Path.Combine(Directory.GetParent(main_dir_path)!.Parent!.Parent!.Parent!.FullName, box.SelectedText);
+            string local_model_path = Path.Combine(Directory.GetParent(main_dir_path)!.Parent!.Parent!.Parent!.FullName, box);
             //clears the combo box
             box2.Items.Clear();
 
