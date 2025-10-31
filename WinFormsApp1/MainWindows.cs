@@ -65,15 +65,16 @@ namespace WinFormsApp1
         }
 
         //SCROLL DOWN LIST FOR CHOOSING CONSTRUCTOR TYPE
-        private void comboBox_Constructor_SelectedIndexChanged(object sender, EventArgs e)
+        public void comboBox_Constructor_SelectedIndexChanged(object sender, EventArgs e)
         {
-         Writting.WriteSelectedItemInbox(comboBox_Constructor, sender, e);
+         string selection = Writting.WriteSelectedItemInbox(comboBox_Constructor, sender, e);
+  
         }
 
         //SCROLL DOWN LIST FOR CHOOSING MODEL TYPE
         private void comboBox_Model_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Edition.LoadFileModel(, comboBox_Model);
+            Edition.LoadFileModel(selection);
         }
 
         //SCROLL DOWN LIST FOR CHOOSING VERSION TYPE
