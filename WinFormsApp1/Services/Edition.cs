@@ -73,7 +73,7 @@ namespace WinFormsApp1.Services
         public static void LoadFileConstructor(System.Windows.Forms.ComboBox box)
         {
             //var for Path constructor
-            string local_constructor_path = Path.Combine(Directory.GetParent(main_dir_path)!.Parent!.Parent!.Parent!.FullName, "ConstructorTemplates");
+            string local_constructor_path = Path.Combine(Directory.GetParent(main_dir_path)!.Parent!.Parent!.Parent!.FullName,"ConstructorTemplates");
             //clears the combo box
             box.Items.Clear();
 
@@ -95,7 +95,7 @@ namespace WinFormsApp1.Services
         {
 
             //var for Path model
-            string local_model_path = Path.Combine(Directory.GetParent(main_dir_path)!.Parent!.Parent!.Parent!.FullName, box);
+            string local_model_path = Path.Combine(Directory.GetParent(main_dir_path)!.Parent!.Parent!.Parent!.FullName,"ConstructorTemplates", box);
             //clears the combo box
             box2.Items.Clear();
 

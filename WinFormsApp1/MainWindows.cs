@@ -19,6 +19,8 @@ namespace WinFormsApp1
 {
     public partial class MainWindows : Form
     {
+        //CLASS VARIABLE
+        public string selection;
         public MainWindows()
         {
             InitializeComponent();
@@ -28,7 +30,6 @@ namespace WinFormsApp1
         private void Form1_Load(object sender, EventArgs e)
         {
             Edition.LoadFileConstructor(comboBox_Constructor);
-
 
         }
 
@@ -65,16 +66,17 @@ namespace WinFormsApp1
         }
 
         //SCROLL DOWN LIST FOR CHOOSING CONSTRUCTOR TYPE
-        public void comboBox_Constructor_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBox_Constructor_SelectedIndexChanged(object sender, EventArgs e)
         {
          string selection = Writting.WriteSelectedItemInbox(comboBox_Constructor, sender, e);
-  
+         Edition.LoadFileModel(selection, comboBox_Model);
+
         }
 
         //SCROLL DOWN LIST FOR CHOOSING MODEL TYPE
         private void comboBox_Model_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Edition.LoadFileModel(selection);
+        string selection = Writting.WriteSelectedItemInbox(comboBox_Model, sender, e);
         }
 
         //SCROLL DOWN LIST FOR CHOOSING VERSION TYPE
