@@ -68,7 +68,7 @@ namespace WinFormsApp1
         //SCROLL DOWN LIST FOR CHOOSING CONSTRUCTOR TYPE
         private void comboBox_Constructor_SelectedIndexChanged(object sender, EventArgs e)
         {
-         string selection = Writting.WriteSelectedItemInbox(comboBox_Constructor, sender, e);
+         string selection = Writting.WriteSelectedItemInbox(comboBox_Constructor,comboBox_Model,comboBox_Version);
          Edition.LoadFileModel(selection, comboBox_Model);
 
         }
@@ -76,7 +76,7 @@ namespace WinFormsApp1
         //SCROLL DOWN LIST FOR CHOOSING MODEL TYPE
         private void comboBox_Model_SelectedIndexChanged(object sender, EventArgs e)
         {
-        string selection = Writting.WriteSelectedItemInbox(comboBox_Model, sender, e);
+        string selection = Writting.WriteSelectedItemInbox(comboBox_Model);
         }
 
         //SCROLL DOWN LIST FOR CHOOSING VERSION TYPE

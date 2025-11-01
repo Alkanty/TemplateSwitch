@@ -86,11 +86,12 @@ namespace WinFormsApp1.Services
                 //add the array to the box
                 box.Items.AddRange(constructeur);
 
+
             }
             else { Logger.WriteLog($"Debug : Le dossier {local_constructor_path} n'existe pas"); MessageBox.Show($" Le dossier {local_constructor_path} n'existe pas"); }
 
         }
-        //METHOD FOR LOADING FOLDER FOR OTHER COMBOBOX
+        //METHOD FOR LOADING FOLDER FOR MODEL COMBOBOX 
         public static void LoadFileModel(string box, System.Windows.Forms.ComboBox box2)
         {
 

@@ -9,10 +9,17 @@ namespace WinFormsApp1.Services
     public class Writting
     {
         //METHOD FOR WRITTING IN SELECTED BOX
-        public static string WriteSelectedItemInbox(System.Windows.Forms.ComboBox box, object sender, EventArgs e)
+        public static string WriteSelectedItemInbox(params System.Windows.Forms.ComboBox[] box)
 {
-        string selectedItemInbox = box.SelectedItem.ToString();
+        string selectedItemInbox = box[0].SelectedItem.ToString();
         Logger.WriteLog($"DEBUG:Selected constructor: {selectedItemInbox}");
+
+            //reset combo box selection
+            foreach (var ind in box.Skip(1))
+            {
+             ind.Items.Clear();
+             ind.Text = "";
+            }
             return selectedItemInbox;
         }
 
