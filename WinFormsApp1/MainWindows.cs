@@ -20,7 +20,8 @@ namespace WinFormsApp1
     public partial class MainWindows : Form
     {
         //CLASS VARIABLE
-        public string selection;
+        public string _selection1;
+        public string _selection2;
         public MainWindows()
         {
             InitializeComponent();
@@ -68,24 +69,24 @@ namespace WinFormsApp1
         //SCROLL DOWN LIST FOR CHOOSING CONSTRUCTOR TYPE
         private void comboBox_Constructor_SelectedIndexChanged(object sender, EventArgs e)
         {
-         string selection = Writting.WriteSelectedItemInbox(comboBox_Constructor,comboBox_Model,comboBox_Version);
-         Edition.LoadFileModel(selection, comboBox_Model);
+         _selection1 = Writting.WriteSelectedItemInbox(comboBox_Constructor,comboBox_Model,comboBox_Version);
+         Edition.LoadFileModel(_selection1, comboBox_Model);
 
         }
 
         //SCROLL DOWN LIST FOR CHOOSING MODEL TYPE
         private void comboBox_Model_SelectedIndexChanged(object sender, EventArgs e)
         {
-        string selection = Writting.WriteSelectedItemInbox(comboBox_Model);
+            _selection2 = Writting.WriteSelectedItemInbox(comboBox_Model,comboBox_Version);
+            Edition.LoadFileVersion(_selection1,_selection2, comboBox_Version);
         }
 
         //SCROLL DOWN LIST FOR CHOOSING VERSION TYPE
         private void comboBox_Version_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Ici tu mets ce qui doit se passer quand on change de modèle
-            MessageBox.Show("Tu as changé de modèle !");
+                  
+            string selection = Writting.WriteSelectedItemInbox(comboBox_Version);
         }
-
-
     }
-}
+    }
+

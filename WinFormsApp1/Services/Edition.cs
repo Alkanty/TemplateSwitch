@@ -114,6 +114,28 @@ namespace WinFormsApp1.Services
             else { Logger.WriteLog($"Debug : Le dossier {local_model_path} n'existe pas"); MessageBox.Show($" Le dossier {local_model_path} n'existe pas"); }
         }
 
+        //METHOD FOR LOADING FOLDER FOR VERSION COMBOBOX 
+        public static void LoadFileVersion(string box,string box2, System.Windows.Forms.ComboBox box3)
+        {
+
+            //var for Path model
+            string local_model_path = Path.Combine(Directory.GetParent(main_dir_path)!.Parent!.Parent!.Parent!.FullName, "ConstructorTemplates", box,box2);
+            //clears the combo box
+            box3.Items.Clear();
+
+            MessageBox.Show($" Le dossier {local_model_path} ");
+            //if directory with the ConstructorTemplates folder exists...
+            if (Directory.Exists(local_model_path))
+            {
+                //we keep all the subdirectory of ConstructorTemplates folder, we select only the names, and we put them in an array.
+                var model = Directory.GetDirectories(local_model_path).Select(path => Path.GetFileName(path)!).ToArray();
+
+                //add the array to the box
+                box3.Items.AddRange(model);
+
+            }
+            else { Logger.WriteLog($"Debug : Le dossier {local_model_path} n'existe pas"); MessageBox.Show($" Le dossier {local_model_path} n'existe pas"); }
+        }
     }
 }
 
