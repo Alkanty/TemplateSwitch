@@ -22,6 +22,9 @@ namespace WinFormsApp1.Services
         //var to get local usersession name
         static string username = Environment.UserName;
 
+        //var to the current Filepath
+        public static string current_file_path; 
+
 
 
 
@@ -61,6 +64,7 @@ namespace WinFormsApp1.Services
             if (OpenBox.ShowDialog() == DialogResult.OK)
             {
                 // read the content of a file and show it on the text box.
+                current_file_path = OpenBox.FileName;
                 string contenu = System.IO.File.ReadAllText(OpenBox.FileName);
                 box.Text = contenu;
 
@@ -68,6 +72,24 @@ namespace WinFormsApp1.Services
 
 
         }
+
+        // METHOD FOR SAVING A FILE
+        public static void SaveFile(System.Windows.Forms.TextBox box)
+        {
+            //if direcoty exist we save the file
+            if (!string.IsNullOrEmpty(current_file_path))
+            {
+                File.WriteAllText(current_file_path, box.Text);
+                Logger.WriteLog($"Fichier sauvegardé : {current_file_path}");
+                MessageBox.Show("Fichier enregistré !");
+            }
+            // if no file opened we show a messagebox
+            else
+            {
+                MessageBox.Show("Aucun fichier ouvert à enregistrer.");
+            }
+        }
+
 
         //METHOD FOR LOADING FOLDER FOR CONSTRUCTOR COMBOBOX
         public static void LoadFileConstructor(System.Windows.Forms.ComboBox box)

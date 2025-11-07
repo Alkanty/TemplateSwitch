@@ -69,24 +69,45 @@ namespace WinFormsApp1
         //SCROLL DOWN LIST FOR CHOOSING CONSTRUCTOR TYPE
         private void comboBox_Constructor_SelectedIndexChanged(object sender, EventArgs e)
         {
-         _selection1 = Writting.WriteSelectedItemInbox(comboBox_Constructor,comboBox_Model,comboBox_Version);
-         Edition.LoadFileModel(_selection1, comboBox_Model);
+            _selection1 = Writting.WriteSelectedItemInbox(comboBox_Constructor, comboBox_Model, comboBox_Version);
+            Edition.LoadFileModel(_selection1, comboBox_Model);
 
         }
 
         //SCROLL DOWN LIST FOR CHOOSING MODEL TYPE
         private void comboBox_Model_SelectedIndexChanged(object sender, EventArgs e)
         {
-            _selection2 = Writting.WriteSelectedItemInbox(comboBox_Model,comboBox_Version);
-            Edition.LoadFileVersion(_selection1,_selection2, comboBox_Version);
+            _selection2 = Writting.WriteSelectedItemInbox(comboBox_Model, comboBox_Version);
+            Edition.LoadFileVersion(_selection1, _selection2, comboBox_Version);
         }
 
         //SCROLL DOWN LIST FOR CHOOSING VERSION TYPE
         private void comboBox_Version_SelectedIndexChanged(object sender, EventArgs e)
         {
-                  
+
             string selection = Writting.WriteSelectedItemInbox(comboBox_Version);
         }
+
+        //TEXTBOX FOR HOSTNAME
+        private void textbox_Hostname_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
-    }
+}
 
