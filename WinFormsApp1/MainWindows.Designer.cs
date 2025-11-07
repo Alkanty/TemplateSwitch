@@ -218,7 +218,7 @@
             label_Path.Size = new Size(90, 25);
             label_Path.TabIndex = 6;
             label_Path.Text = "label_Path";
-            label_Path.Click += label5_Click;
+            label_Path.Click += label_Path_Click;
             // 
             // MainWindows
             // 

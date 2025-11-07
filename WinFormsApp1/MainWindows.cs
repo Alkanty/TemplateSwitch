@@ -50,6 +50,7 @@ namespace WinFormsApp1
         private void button1_Click(object sender, EventArgs e)
         {
             Edition.NewTemplate(textVisualBox);
+            label_Path.Text = Edition.currentfilepath ?? "No file opened.";
         }
 
         //BUTTON FOR EDITING ON CLICK
@@ -58,6 +59,8 @@ namespace WinFormsApp1
         {
             //appel de la methode pour ouvrir l'onglet de chargement fichier + affichage dans textbox 
             Edition.OpenFileBox(textVisualBox);
+
+            label_Path.Text = Edition.currentfilepath ?? "No file opened.";
         }
 
         //BUTTON FOR OPENING DEBUG FILE ON CLICK
@@ -104,7 +107,8 @@ namespace WinFormsApp1
 
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        //PATH LABEL
+        private void label_Path_Click(object sender, EventArgs e)
         {
 
         }

@@ -23,7 +23,10 @@ namespace WinFormsApp1.Services
         static string username = Environment.UserName;
 
         //var to the current Filepath
-        public static string current_file_path; 
+        private static string current_file_path;
+
+        //make a read-only property for other program part to get current filepath
+        public static string currentfilepath => current_file_path;
 
 
 
@@ -48,6 +51,8 @@ namespace WinFormsApp1.Services
 
             // read the content of a file and show it on the text box.
             string contenu = File.ReadAllText($"{local_template_path}\\{newfile}");
+            //set the current file path to the selected file
+            current_file_path = $"{local_template_path}\\{newfile}";
             box.Text = contenu;
 
         }
@@ -63,8 +68,9 @@ namespace WinFormsApp1.Services
             //test to see if dialog box openned 
             if (OpenBox.ShowDialog() == DialogResult.OK)
             {
-                // read the content of a file and show it on the text box.
+                //set the current file path to the selected file
                 current_file_path = OpenBox.FileName;
+                // read the content of a file and show it on the text box.
                 string contenu = System.IO.File.ReadAllText(OpenBox.FileName);
                 box.Text = contenu;
 
