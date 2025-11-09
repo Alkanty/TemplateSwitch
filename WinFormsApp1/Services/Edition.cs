@@ -17,7 +17,7 @@ namespace WinFormsApp1.Services
         static string main_dir_path = AppContext.BaseDirectory;
 
         //var for local path for templates
-        static string local_template_path = $"C:\\Users\\{username}\\AppData\\Local\\WinformApp\\Templates";
+        static string local_template_path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),"WinformApp","Templates");
 
         //var to get local usersession name
         static string username = Environment.UserName;
@@ -38,21 +38,24 @@ namespace WinFormsApp1.Services
             string newfile = "New_template.txt";
             Directory.CreateDirectory(local_template_path);
 
+            //file path 
+            string filePath = Path.Combine(local_template_path, newfile);
+
             //if file exist nothing else create it
-            if (File.Exists($"{local_template_path}\\{newfile}") == true)
+            if (File.Exists(filePath))
             {
                 Logger.WriteLog($"Debug : Le fichier {newfile} existe");
             }
             else
             {
                 Logger.WriteLog($"Debug : Le fichier {newfile} n'existe pas,création en cours...");
-                File.Create($"{local_template_path}\\{newfile}");
+                File.Create(filePath).Close();
             }
 
             // read the content of a file and show it on the text box.
-            string contenu = File.ReadAllText($"{local_template_path}\\{newfile}");
+            string contenu = File.ReadAllText(filePath);
             //set the current file path to the selected file
-            current_file_path = $"{local_template_path}\\{newfile}";
+            current_file_path = filePath;
             box.Text = contenu;
 
         }

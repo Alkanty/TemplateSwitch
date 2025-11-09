@@ -51,10 +51,10 @@
             // 
             // button_NewTemp
             // 
-            button_NewTemp.Location = new Point(6, 49);
+            button_NewTemp.Location = new Point(5, 39);
             button_NewTemp.Margin = new Padding(2);
             button_NewTemp.Name = "button_NewTemp";
-            button_NewTemp.Size = new Size(202, 34);
+            button_NewTemp.Size = new Size(162, 27);
             button_NewTemp.TabIndex = 0;
             button_NewTemp.Text = "Nouveau Template";
             button_NewTemp.UseVisualStyleBackColor = true;
@@ -62,10 +62,10 @@
             // 
             // buttonEdition
             // 
-            buttonEdition.Location = new Point(331, 49);
+            buttonEdition.Location = new Point(265, 39);
             buttonEdition.Margin = new Padding(2);
             buttonEdition.Name = "buttonEdition";
-            buttonEdition.Size = new Size(112, 34);
+            buttonEdition.Size = new Size(90, 27);
             buttonEdition.TabIndex = 1;
             buttonEdition.Text = "Editer";
             buttonEdition.UseVisualStyleBackColor = true;
@@ -74,10 +74,10 @@
             // ConfigurationPanel
             // 
             ConfigurationPanel.Controls.Add(groupBox1);
-            ConfigurationPanel.Location = new Point(51, 59);
+            ConfigurationPanel.Location = new Point(41, 47);
             ConfigurationPanel.Margin = new Padding(2);
             ConfigurationPanel.Name = "ConfigurationPanel";
-            ConfigurationPanel.Size = new Size(522, 584);
+            ConfigurationPanel.Size = new Size(418, 467);
             ConfigurationPanel.TabIndex = 2;
             // 
             // groupBox1
@@ -92,11 +92,11 @@
             groupBox1.Controls.Add(comboBox_Constructor);
             groupBox1.Controls.Add(button_NewTemp);
             groupBox1.Controls.Add(buttonEdition);
-            groupBox1.Location = new Point(12, 21);
+            groupBox1.Location = new Point(10, 17);
             groupBox1.Margin = new Padding(2);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(2);
-            groupBox1.Size = new Size(469, 539);
+            groupBox1.Size = new Size(375, 431);
             groupBox1.TabIndex = 2;
             groupBox1.TabStop = false;
             groupBox1.Text = "Parametres";
@@ -104,17 +104,19 @@
             // 
             // textbox_Hostname
             // 
-            textbox_Hostname.Location = new Point(255, 265);
+            textbox_Hostname.Location = new Point(204, 212);
+            textbox_Hostname.Margin = new Padding(2, 2, 2, 2);
             textbox_Hostname.Name = "textbox_Hostname";
-            textbox_Hostname.Size = new Size(188, 31);
+            textbox_Hostname.Size = new Size(151, 27);
             textbox_Hostname.TabIndex = 9;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(144, 268);
+            label4.Location = new Point(115, 214);
+            label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(102, 25);
+            label4.Size = new Size(84, 20);
             label4.TabIndex = 8;
             label4.Text = "Host Name";
             label4.Click += label4_Click;
@@ -122,18 +124,20 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(178, 189);
+            label3.Location = new Point(142, 151);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(70, 25);
+            label3.Size = new Size(57, 20);
             label3.TabIndex = 7;
             label3.Text = "Version";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(174, 147);
+            label2.Location = new Point(139, 118);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(72, 25);
+            label2.Size = new Size(60, 20);
             label2.TabIndex = 6;
             label2.Text = "Modèle";
             label2.Click += label2_Click;
@@ -141,29 +145,28 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(135, 104);
+            label1.Location = new Point(108, 83);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(113, 25);
+            label1.Size = new Size(92, 20);
             label1.TabIndex = 5;
             label1.Text = "Constructeur";
             // 
             // comboBox_Version
             // 
             comboBox_Version.FormattingEnabled = true;
-            comboBox_Version.Location = new Point(255, 186);
-            comboBox_Version.Margin = new Padding(4);
+            comboBox_Version.Location = new Point(204, 149);
             comboBox_Version.Name = "comboBox_Version";
-            comboBox_Version.Size = new Size(188, 33);
+            comboBox_Version.Size = new Size(151, 28);
             comboBox_Version.TabIndex = 4;
             comboBox_Version.SelectedIndexChanged += comboBox_Version_SelectedIndexChanged;
             // 
             // comboBox_Model
             // 
             comboBox_Model.FormattingEnabled = true;
-            comboBox_Model.Location = new Point(255, 144);
-            comboBox_Model.Margin = new Padding(4);
+            comboBox_Model.Location = new Point(204, 115);
             comboBox_Model.Name = "comboBox_Model";
-            comboBox_Model.Size = new Size(188, 33);
+            comboBox_Model.Size = new Size(151, 28);
             comboBox_Model.TabIndex = 3;
             comboBox_Model.SelectedIndexChanged += comboBox_Model_SelectedIndexChanged;
             // 
@@ -171,60 +174,58 @@
             // 
             comboBox_Constructor.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_Constructor.FormattingEnabled = true;
-            comboBox_Constructor.Location = new Point(255, 101);
-            comboBox_Constructor.Margin = new Padding(4);
+            comboBox_Constructor.Location = new Point(204, 81);
             comboBox_Constructor.Name = "comboBox_Constructor";
-            comboBox_Constructor.Size = new Size(188, 33);
+            comboBox_Constructor.Size = new Size(151, 28);
             comboBox_Constructor.TabIndex = 2;
             comboBox_Constructor.SelectedIndexChanged += comboBox_Constructor_SelectedIndexChanged;
             // 
             // textVisualBox
             // 
-            textVisualBox.Location = new Point(632, 59);
+            textVisualBox.Location = new Point(506, 47);
             textVisualBox.Margin = new Padding(2);
             textVisualBox.Multiline = true;
             textVisualBox.Name = "textVisualBox";
             textVisualBox.ScrollBars = ScrollBars.Both;
-            textVisualBox.Size = new Size(977, 643);
+            textVisualBox.Size = new Size(782, 515);
             textVisualBox.TabIndex = 3;
             textVisualBox.TextChanged += textBox1_TextChanged;
             // 
             // button_debug
             // 
             button_debug.Image = (Image)resources.GetObject("button_debug.Image");
-            button_debug.Location = new Point(15, 678);
-            button_debug.Margin = new Padding(4);
+            button_debug.Location = new Point(12, 542);
             button_debug.Name = "button_debug";
-            button_debug.Size = new Size(40, 38);
+            button_debug.Size = new Size(32, 30);
             button_debug.TabIndex = 4;
             button_debug.UseVisualStyleBackColor = true;
             button_debug.Click += button_debug_Click;
             // 
-            // button_save
+            // button_Save
             // 
             button_Save.Image = Properties.Resources.diskette__2_;
-            button_Save.Location = new Point(1314, 13);
-            button_Save.Margin = new Padding(4);
-            button_Save.Name = "button_save";
-            button_Save.Size = new Size(40, 38);
+            button_Save.Location = new Point(1293, 64);
+            button_Save.Name = "button_Save";
+            button_Save.Size = new Size(32, 30);
             button_Save.TabIndex = 5;
             button_Save.UseVisualStyleBackColor = true;
             // 
             // label_Path
             // 
             label_Path.AutoSize = true;
-            label_Path.Location = new Point(632, 32);
+            label_Path.Location = new Point(506, 26);
+            label_Path.Margin = new Padding(2, 0, 2, 0);
             label_Path.Name = "label_Path";
-            label_Path.Size = new Size(90, 25);
+            label_Path.Size = new Size(76, 20);
             label_Path.TabIndex = 6;
             label_Path.Text = "label_Path";
             label_Path.Click += label_Path_Click;
             // 
             // MainWindows
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1676, 730);
+            ClientSize = new Size(1341, 584);
             Controls.Add(label_Path);
             Controls.Add(button_Save);
             Controls.Add(button_debug);

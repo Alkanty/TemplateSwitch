@@ -110,7 +110,7 @@ namespace WinFormsApp1
         //TEXTBOX FOR PATH LABEL
         private void label_Path_Click(object sender, EventArgs e)
         {
-
+             
         }
         private void button_Save_Click (object sender, EventArgs e)
         {
