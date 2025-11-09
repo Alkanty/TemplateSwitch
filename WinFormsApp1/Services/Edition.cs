@@ -82,7 +82,7 @@ namespace WinFormsApp1.Services
         // METHOD FOR SAVING A FILE
         public static void SaveFile(System.Windows.Forms.TextBox box)
         {
-            //if direcoty exist we save the file
+            //if directory exist we save the file
             if (!string.IsNullOrEmpty(current_file_path))
             {
                 File.WriteAllText(current_file_path, box.Text);

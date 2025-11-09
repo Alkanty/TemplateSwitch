@@ -43,7 +43,7 @@
             comboBox_Constructor = new ComboBox();
             textVisualBox = new TextBox();
             button_debug = new Button();
-            button_save = new Button();
+            button_Save = new Button();
             label_Path = new Label();
             ConfigurationPanel.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -202,13 +202,13 @@
             // 
             // button_save
             // 
-            button_save.Image = Properties.Resources.diskette__2_;
-            button_save.Location = new Point(1314, 13);
-            button_save.Margin = new Padding(4);
-            button_save.Name = "button_save";
-            button_save.Size = new Size(40, 38);
-            button_save.TabIndex = 5;
-            button_save.UseVisualStyleBackColor = true;
+            button_Save.Image = Properties.Resources.diskette__2_;
+            button_Save.Location = new Point(1314, 13);
+            button_Save.Margin = new Padding(4);
+            button_Save.Name = "button_save";
+            button_Save.Size = new Size(40, 38);
+            button_Save.TabIndex = 5;
+            button_Save.UseVisualStyleBackColor = true;
             // 
             // label_Path
             // 
@@ -226,7 +226,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1676, 730);
             Controls.Add(label_Path);
-            Controls.Add(button_save);
+            Controls.Add(button_Save);
             Controls.Add(button_debug);
             Controls.Add(textVisualBox);
             Controls.Add(ConfigurationPanel);
@@ -257,7 +257,7 @@
         private Label label4;
         private Label label3;
         private TextBox textbox_Hostname;
-        private Button button_save;
+        private Button button_Save;
         private Label label_Path;
     }
 }
