@@ -6,8 +6,8 @@ using System.Drawing.Text;
 using WinFormsApp1.Services;
 
 ////NOMENCLATURE////
-//NAMESPACE + CLASS + METHOD = PASCAL CASE
-// VARIABLE = LOWER CASE
+//NAMESPACE + CLASS + METHOD = PascalCase
+// VARIABLE = LOWER CASE or camelCase
 // COMMENT ALWAYS ON ONE LINE : BRIEF IN ONE SENTENCE ON TOP OF THE ELEMENT DESCRIBE
 //COMMENT OF METHOD CAPITAL LETTER COMMENT OF CODE LOWERCASE
 // {} JUMP A LIGNE AFTER LINKED CLASS/METHOD/LOOP BMUT SAME LEVEL +
@@ -93,16 +93,6 @@ namespace WinFormsApp1
 
         //TEXTBOX FOR HOSTNAME
         private void textbox_Hostname_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
         {
 
         }

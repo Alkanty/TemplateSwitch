@@ -34,10 +34,10 @@
             ConfigurationPanel = new Panel();
             groupBox1 = new GroupBox();
             textbox_Hostname = new TextBox();
-            label4 = new Label();
-            label3 = new Label();
-            label2 = new Label();
-            label1 = new Label();
+            label_Hostname = new Label();
+            label_Version = new Label();
+            label_Modele = new Label();
+            label_Constructeur = new Label();
             comboBox_Version = new ComboBox();
             comboBox_Model = new ComboBox();
             comboBox_Constructor = new ComboBox();
@@ -83,10 +83,10 @@
             // groupBox1
             // 
             groupBox1.Controls.Add(textbox_Hostname);
-            groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(label_Hostname);
+            groupBox1.Controls.Add(label_Version);
+            groupBox1.Controls.Add(label_Modele);
+            groupBox1.Controls.Add(label_Constructeur);
             groupBox1.Controls.Add(comboBox_Version);
             groupBox1.Controls.Add(comboBox_Model);
             groupBox1.Controls.Add(comboBox_Constructor);
@@ -105,52 +105,50 @@
             // textbox_Hostname
             // 
             textbox_Hostname.Location = new Point(204, 212);
-            textbox_Hostname.Margin = new Padding(2, 2, 2, 2);
+            textbox_Hostname.Margin = new Padding(2);
             textbox_Hostname.Name = "textbox_Hostname";
             textbox_Hostname.Size = new Size(151, 27);
             textbox_Hostname.TabIndex = 9;
             // 
-            // label4
+            // label_Hostname
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(115, 214);
-            label4.Margin = new Padding(2, 0, 2, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(84, 20);
-            label4.TabIndex = 8;
-            label4.Text = "Host Name";
-            label4.Click += label4_Click;
+            label_Hostname.AutoSize = true;
+            label_Hostname.Location = new Point(115, 214);
+            label_Hostname.Margin = new Padding(2, 0, 2, 0);
+            label_Hostname.Name = "label_Hostname";
+            label_Hostname.Size = new Size(84, 20);
+            label_Hostname.TabIndex = 8;
+            label_Hostname.Text = "Host Name";
             // 
-            // label3
+            // label_Version
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(142, 151);
-            label3.Margin = new Padding(2, 0, 2, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(57, 20);
-            label3.TabIndex = 7;
-            label3.Text = "Version";
+            label_Version.AutoSize = true;
+            label_Version.Location = new Point(142, 151);
+            label_Version.Margin = new Padding(2, 0, 2, 0);
+            label_Version.Name = "label_Version";
+            label_Version.Size = new Size(57, 20);
+            label_Version.TabIndex = 7;
+            label_Version.Text = "Version";
             // 
-            // label2
+            // label_Modele
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(139, 118);
-            label2.Margin = new Padding(2, 0, 2, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(60, 20);
-            label2.TabIndex = 6;
-            label2.Text = "Modèle";
-            label2.Click += label2_Click;
+            label_Modele.AutoSize = true;
+            label_Modele.Location = new Point(139, 118);
+            label_Modele.Margin = new Padding(2, 0, 2, 0);
+            label_Modele.Name = "label_Modele";
+            label_Modele.Size = new Size(60, 20);
+            label_Modele.TabIndex = 6;
+            label_Modele.Text = "Modèle";
             // 
-            // label1
+            // label_Constructeur
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(108, 83);
-            label1.Margin = new Padding(2, 0, 2, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(92, 20);
-            label1.TabIndex = 5;
-            label1.Text = "Constructeur";
+            label_Constructeur.AutoSize = true;
+            label_Constructeur.Location = new Point(108, 83);
+            label_Constructeur.Margin = new Padding(2, 0, 2, 0);
+            label_Constructeur.Name = "label_Constructeur";
+            label_Constructeur.Size = new Size(92, 20);
+            label_Constructeur.TabIndex = 5;
+            label_Constructeur.Text = "Constructeur";
             // 
             // comboBox_Version
             // 
@@ -254,10 +252,10 @@
         private ComboBox comboBox_Model;
         private ComboBox comboBox_Constructor;
         private Button button_debug;
-        private Label label2;
-        private Label label1;
-        private Label label4;
-        private Label label3;
+        private Label label_Modele;
+        private Label label_Constructeur;
+        private Label label_Hostname;
+        private Label label_Version;
         private TextBox textbox_Hostname;
         private Button button_Save;
         private Label label_Path;
