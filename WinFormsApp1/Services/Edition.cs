@@ -34,24 +34,24 @@ namespace WinFormsApp1.Services
         //METHOD FOR CREATING A NEW BLANK FILE AND SHOW IT IN EDITOR
         public static void NewTemplate(System.Windows.Forms.TextBox box)
         {
+
+            //file count for creating new index file name
+            string[] files = Directory.GetFiles(local_template_path);
+            int fileCount = files.Length + 1;
+
             //create local directory for templates 
-            string newfile = "New_template.txt";
+            string newfile = $"New_template{fileCount}.txt";
             Directory.CreateDirectory(local_template_path);
 
             //file path 
             string filePath = Path.Combine(local_template_path, newfile);
 
-            //if file exist nothing else create it
-            if (File.Exists(filePath))
-            {
-                Logger.WriteLog($"Debug : Le fichier {newfile} existe");
-            }
-            else
-            {
-                Logger.WriteLog($"Debug : Le fichier {newfile} n'existe pas,création en cours...");
+            //file exist nothing else create it
+ 
+                Logger.WriteLog($"Debug : Creation {newfile} en cours...");
+                MessageBox.Show($"Debug : Creation {newfile} en cours...");
                 File.Create(filePath).Close();
-            }
-
+    
             // read the content of a file and show it on the text box.
             string contenu = File.ReadAllText(filePath);
             //set the current file path to the selected file

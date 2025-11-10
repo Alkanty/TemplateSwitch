@@ -112,6 +112,8 @@ namespace WinFormsApp1
         {
              
         }
+
+        //BUTTON FOR SAVING FILE ON CLICK
         private void button_Save_Click (object sender, EventArgs e)
         {
             Edition.SaveFile(textVisualBox);

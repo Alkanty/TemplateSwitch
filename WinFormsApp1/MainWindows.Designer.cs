@@ -209,6 +209,7 @@
             button_Save.Size = new Size(32, 30);
             button_Save.TabIndex = 5;
             button_Save.UseVisualStyleBackColor = true;
+            button_Save.Click += button_Save_Click;
             // 
             // label_Path
             // 
