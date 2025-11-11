@@ -100,13 +100,32 @@ namespace WinFormsApp1
         //TEXTBOX FOR PATH LABEL
         private void label_Path_Click(object sender, EventArgs e)
         {
-             
+
         }
 
         //BUTTON FOR SAVING FILE ON CLICK
-        private void button_Save_Click (object sender, EventArgs e)
+        private void button_Save_Click(object sender, EventArgs e)
         {
             Edition.SaveFile(textVisualBox);
+        }
+
+        //BUTTON FOR HOSTNAME GENERATION ON CLICK
+        private void button_Hostname_Click(object sender, EventArgs e)
+        {
+            // Path of the JSON
+            string jsonPath = Path.Combine(Edition.currentfilepath, "config.json");
+
+            //
+            Root config = Writting.WriteJson(jsonPath);
+            if (config == null) return;
+
+            // on récupère les commandes
+            string line1 = config.system_name.line1;
+            string line2 = config.system_name.line2.Replace("{name}", "Switch_Paris");
+
+            // on les ajoute au contenu de la TextBox
+            textVisualBox.AppendText($"{line1}\r\n{line2}\r\n");
+
         }
     }
 }

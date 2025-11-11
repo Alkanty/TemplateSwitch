@@ -45,6 +45,7 @@
             button_debug = new Button();
             button_Save = new Button();
             label_Path = new Label();
+            button_Hostname = new Button();
             ConfigurationPanel.SuspendLayout();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -82,6 +83,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(button_Hostname);
             groupBox1.Controls.Add(textbox_Hostname);
             groupBox1.Controls.Add(label_Hostname);
             groupBox1.Controls.Add(label_Version);
@@ -104,7 +106,7 @@
             // 
             // textbox_Hostname
             // 
-            textbox_Hostname.Location = new Point(204, 212);
+            textbox_Hostname.Location = new Point(153, 213);
             textbox_Hostname.Margin = new Padding(2);
             textbox_Hostname.Name = "textbox_Hostname";
             textbox_Hostname.Size = new Size(151, 27);
@@ -113,7 +115,7 @@
             // label_Hostname
             // 
             label_Hostname.AutoSize = true;
-            label_Hostname.Location = new Point(115, 214);
+            label_Hostname.Location = new Point(64, 215);
             label_Hostname.Margin = new Padding(2, 0, 2, 0);
             label_Hostname.Name = "label_Hostname";
             label_Hostname.Size = new Size(84, 20);
@@ -220,6 +222,16 @@
             label_Path.Text = "label_Path";
             label_Path.Click += label_Path_Click;
             // 
+            // button_Hostname
+            // 
+            button_Hostname.Location = new Point(314, 211);
+            button_Hostname.Name = "button_Hostname";
+            button_Hostname.Size = new Size(41, 29);
+            button_Hostname.TabIndex = 10;
+            button_Hostname.Text = "button1";
+            button_Hostname.UseVisualStyleBackColor = true;
+            button_Hostname.Click += button_Hostname_Click;
+            // 
             // MainWindows
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -259,5 +271,6 @@
         private TextBox textbox_Hostname;
         private Button button_Save;
         private Label label_Path;
+        private Button button_Hostname;
     }
 }
