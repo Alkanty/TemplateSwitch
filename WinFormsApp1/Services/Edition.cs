@@ -14,7 +14,11 @@ namespace WinFormsApp1.Services
     public class Edition
     {
         //var to get main directory
-        static string main_dir_path = AppContext.BaseDirectory;
+        static string exe_path = AppContext.BaseDirectory;
+        static string main_dir_path = Directory.GetParent(exe_path).Parent.Parent.Parent.FullName;
+
+        //make a read-only property for other program part to get current filepath
+        public static string maindirpath => main_dir_path;
 
         //var for local path for templates
         static string local_template_path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),"WinformApp","Templates");
@@ -23,7 +27,7 @@ namespace WinFormsApp1.Services
         static string username = Environment.UserName;
 
         //var to the current Filepath
-        private static string current_file_path;
+        private static string? current_file_path;
 
         //make a read-only property for other program part to get current filepath
         public static string currentfilepath => current_file_path;
@@ -104,7 +108,7 @@ namespace WinFormsApp1.Services
         public static void LoadFileConstructor(System.Windows.Forms.ComboBox box)
         {
             //var for Path constructor
-            string local_constructor_path = Path.Combine(Directory.GetParent(main_dir_path)!.Parent!.Parent!.Parent!.FullName,"ConstructorTemplates");
+            string local_constructor_path = Path.Combine(main_dir_path, "ConstructorTemplates");
             //clears the combo box
             box.Items.Clear();
 
@@ -127,7 +131,7 @@ namespace WinFormsApp1.Services
         {
 
             //var for Path model
-            string local_model_path = Path.Combine(Directory.GetParent(main_dir_path)!.Parent!.Parent!.Parent!.FullName,"ConstructorTemplates", box);
+            string local_model_path = Path.Combine(main_dir_path,"ConstructorTemplates", box);
             //clears the combo box
             box2.Items.Clear();
 
@@ -150,22 +154,23 @@ namespace WinFormsApp1.Services
         {
 
             //var for Path model
-            string local_model_path = Path.Combine(Directory.GetParent(main_dir_path)!.Parent!.Parent!.Parent!.FullName, "ConstructorTemplates", box,box2);
+            string local_version_path = Path.Combine(main_dir_path, "ConstructorTemplates", box,box2);
             //clears the combo box
             box3.Items.Clear();
 
-            MessageBox.Show($" Le dossier {local_model_path} ");
+            MessageBox.Show($" Le dossier {local_version_path} ");
             //if directory with the ConstructorTemplates folder exists...
-            if (Directory.Exists(local_model_path))
+            if (Directory.Exists(local_version_path))
             {
                 //we keep all the subdirectory of ConstructorTemplates folder, we select only the names, and we put them in an array.
-                var model = Directory.GetDirectories(local_model_path).Select(path => Path.GetFileName(path)!).ToArray();
+                var model = Directory.GetDirectories(local_version_path).Select(path => Path.GetFileName(path)!).ToArray();
 
                 //add the array to the box
                 box3.Items.AddRange(model);
 
+
             }
-            else { Logger.WriteLog($"Debug : Le dossier {local_model_path} n'existe pas"); MessageBox.Show($" Le dossier {local_model_path} n'existe pas"); }
+            else { Logger.WriteLog($"Debug : Le dossier {local_version_path} n'existe pas"); MessageBox.Show($" Le dossier {local_version_path} n'existe pas"); }
         }
     }
 }

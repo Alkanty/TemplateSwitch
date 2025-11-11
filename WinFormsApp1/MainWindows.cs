@@ -22,6 +22,7 @@ namespace WinFormsApp1
         //CLASS VARIABLE
         public string _selection1;
         public string _selection2;
+        public string _selection3;
         public MainWindows()
         {
             InitializeComponent();
@@ -88,7 +89,7 @@ namespace WinFormsApp1
         private void comboBox_Version_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            string selection = Writting.WriteSelectedItemInbox(comboBox_Version);
+             _selection3 = Writting.WriteSelectedItemInbox(comboBox_Version);
         }
 
         //TEXTBOX FOR HOSTNAME
@@ -113,7 +114,7 @@ namespace WinFormsApp1
         private void button_Hostname_Click(object sender, EventArgs e)
         {
             // Path of the JSON
-            string jsonPath = Path.Combine(Edition.currentfilepath, "config.json");
+            string jsonPath = Path.Combine(Edition.maindirpath,"ConstructorTemplates",_selection1,_selection2,_selection3, "config.json");
 
             //
             Root config = Writting.WriteJson(jsonPath);
