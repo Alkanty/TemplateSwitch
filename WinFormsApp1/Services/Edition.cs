@@ -135,7 +135,6 @@ namespace WinFormsApp1.Services
             //clears the combo box
             box2.Items.Clear();
 
-            MessageBox.Show($" Le dossier {local_model_path} ");
             //if directory with the ConstructorTemplates folder exists...
             if (Directory.Exists(local_model_path))
             {
@@ -158,7 +157,7 @@ namespace WinFormsApp1.Services
             //clears the combo box
             box3.Items.Clear();
 
-            MessageBox.Show($" Le dossier {local_version_path} ");
+
             //if directory with the ConstructorTemplates folder exists...
             if (Directory.Exists(local_version_path))
             {

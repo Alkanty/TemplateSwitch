@@ -2,9 +2,12 @@
   "system_name": {
     "line1": "system view",
     "line2": "sysname {name}"
-    }
-
-
-
+  },
+  "dhcp_server": {
+    "line1": "dhcp enable"
+  },
+  "dhcp_snooping_protection": {
+    "line1": "dhcp snooping enable"
+  }
 
 }
