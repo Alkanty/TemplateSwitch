@@ -29,8 +29,8 @@ namespace WinFormsApp1.Services
     //ROOT CLASS FOR DESERIALIZATION
     public class Root
     {
-        public SystemName system_name { get; set; }
-        public DhcpServer dhcp_server { get; set; }
-        public DhcpSnoopingProtection dhcp_snooping_protection { get; set; }
+        public SystemName systemname { get; set; }
+        public DhcpServer dhcpserver { get; set; }
+        public DhcpSnoopingProtection dhcpsnoopingprotection { get; set; }
     }
 }

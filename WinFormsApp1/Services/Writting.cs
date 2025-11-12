@@ -46,22 +46,47 @@ namespace WinFormsApp1.Services
         }
         //METHOD FOR WRITTING JSON IN BOX
 
-        public static void WriteJsonInbox(System.Windows.Forms.TextBox box, System.Windows.Forms.TextBox boxVisual, string jsonPath)
+        public static void WriteJsonInbox(System.Windows.Forms.TextBox box, System.Windows.Forms.TextBox boxVisual, string jsonPath,Type classType)
         {
 
             //read the json file
+
+            //root object 
             Root config = Writting.DeserializeJson(jsonPath);
             if (config == null) return;
 
-            // on récupère les commandes
-            string line1 = config.system_name.line1;
-            string line2 = config.system_name.line2.Replace("{name}", box.Text);
 
-            // on les ajoute au contenu de la TextBox
-            boxVisual.AppendText($"{line1}\r\n{line2}\r\n \r\n");
+            // get number of variable in classType (only for debbuging)
+            int count = classType.GetProperties().Length;
+            Logger.WriteLog($"DEBUG:number of variable in class :{count}");
 
+            //get the name of the property associated to the class ("SystemName" → "systemname")
+            string propertyName = classType.Name.ToLower();
+
+            //Create a table with all properties of root object (systemname,dhcpserver...) within all the classes. and it gives back first match with propertyName
+            var prop = typeof(Root).GetProperties().FirstOrDefault(p => p.Name.Equals(propertyName));
+
+            //check if the property exist in object
+            if (prop == null)
+            {
+                Logger.WriteLog($"⚠️ Impossible de trouver {propertyName} dans Root\r\n");
+                return;
+            }
+
+            // get the sub-object  (config.systemname)
+            var subObject = prop.GetValue(config);
+
+            // read all properties 
+            foreach (var p in classType.GetProperties())
+            {
+                //get back value of property in sub-object
+                string value = p.GetValue(subObject)?.ToString() ?? "";
+                value = value.Replace("{name}", box.Text); // remplace les placeholders si besoin
+                boxVisual.AppendText(value + "\r\n");
+            }
         }
 
         }
-    }
+
+        }
 

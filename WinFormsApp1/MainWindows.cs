@@ -123,7 +123,7 @@ namespace WinFormsApp1
             jsonPath = Path.Combine(Edition.maindirpath,"ConstructorTemplates",_selection1,_selection2,_selection3, "config.json");
 
             //read the json file
-            Writting.WriteJsonInbox(textbox_Hostname, textVisualBox,jsonPath);
+            Writting.WriteJsonInbox(textbox_Hostname, textVisualBox,jsonPath,typeof(SystemName));
         }
     }
 }
