@@ -82,7 +82,7 @@ namespace WinFormsApp1.Services
                 //get back value of property in sub-object
                 string value = p.GetValue(subObject)?.ToString() ?? "";
                 value = value.Replace("{name}", box.Text); // remplace les placeholders si besoin
-                boxVisual.AppendText(value + "\r\n");
+                boxVisual.AppendText(value + "\r\n" + "\r\n");
             }
         }
 

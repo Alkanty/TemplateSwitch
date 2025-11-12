@@ -3,6 +3,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Diagnostics;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing.Text;
 using WinFormsApp1.Services;
 
@@ -119,11 +120,14 @@ namespace WinFormsApp1
         //BUTTON FOR HOSTNAME GENERATION ON CLICK
         private void button_Hostname_Click(object sender, EventArgs e)
         {
-            // Path of the JSON
-            jsonPath = Path.Combine(Edition.maindirpath,"ConstructorTemplates",_selection1,_selection2,_selection3, "config.json");
+            // Path of the JSON (needs to be debbuged)
+            if (_selection1 != null && _selection2 != null && _selection3 != null)
+            { jsonPath = Path.Combine(Edition.maindirpath, "ConstructorTemplates", _selection1, _selection2, _selection3, "config.json"); }
+            else{ MessageBox.Show("you need to select a model or a version");}
 
-            //read the json file
-            Writting.WriteJsonInbox(textbox_Hostname, textVisualBox,jsonPath,typeof(SystemName));
+                    //read the json file
+                    Writting.WriteJsonInbox(textbox_Hostname, textVisualBox, jsonPath, typeof(SystemName));
+
         }
     }
 }
