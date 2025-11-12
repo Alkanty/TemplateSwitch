@@ -92,11 +92,6 @@ namespace WinFormsApp1
              _selection3 = Writting.WriteSelectedItemInbox(comboBox_Version);
         }
 
-        //TEXTBOX FOR HOSTNAME
-        private void textbox_Hostname_Click(object sender, EventArgs e)
-        {
-
-        }
 
         //TEXTBOX FOR PATH LABEL
         private void label_Path_Click(object sender, EventArgs e)
@@ -108,6 +103,13 @@ namespace WinFormsApp1
         private void button_Save_Click(object sender, EventArgs e)
         {
             Edition.SaveFile(textVisualBox);
+        }
+
+
+        //TEXTBOX FOR HOSTNAME
+        private void textbox_Hostname_Click(object sender, EventArgs e)
+        {
+
         }
 
         //BUTTON FOR HOSTNAME GENERATION ON CLICK
@@ -122,10 +124,10 @@ namespace WinFormsApp1
 
             // on récupère les commandes
             string line1 = config.system_name.line1;
-            string line2 = config.system_name.line2.Replace("{name}", "Switch_Paris");
+            string line2 = config.system_name.line2.Replace("{name}", textbox_Hostname.Text);
 
             // on les ajoute au contenu de la TextBox
-            textVisualBox.AppendText($"{line1}\r\n{line2}\r\n");
+            textVisualBox.AppendText($"{line1}\r\n{line2}\r\n \r\n");
 
         }
     }
