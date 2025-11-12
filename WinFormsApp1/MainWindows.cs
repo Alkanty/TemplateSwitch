@@ -94,7 +94,7 @@ namespace WinFormsApp1
         private void comboBox_Version_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-             _selection3 = Writting.WriteSelectedItemInbox(comboBox_Version);
+            _selection3 = Writting.WriteSelectedItemInbox(comboBox_Version);
         }
 
 
@@ -123,10 +123,15 @@ namespace WinFormsApp1
             // Path of the JSON (needs to be debbuged)
             if (_selection1 != null && _selection2 != null && _selection3 != null)
             { jsonPath = Path.Combine(Edition.maindirpath, "ConstructorTemplates", _selection1, _selection2, _selection3, "config.json"); }
-            else{ MessageBox.Show("you need to select a model or a version");}
+            else { MessageBox.Show("you need to select a model or a version"); }
 
-                    //read the json file
-                    Writting.WriteJsonInbox(textbox_Hostname, textVisualBox, jsonPath, typeof(SystemName));
+            //read the json file
+            Writting.WriteJsonInbox(textbox_Hostname, textVisualBox, jsonPath, typeof(SystemName));
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
 
         }
     }
