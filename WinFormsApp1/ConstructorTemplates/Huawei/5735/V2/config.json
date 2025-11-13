@@ -9,5 +9,9 @@
   "dhcpsnoopingprotection": {
     "line1": "dhcp snooping enable"
   }
-
+  "vlan": {
+    "line1": "vlan {vlan}",
+    "line2": "description {description}",
+    "line3": "dhcp snooping enable"
+  }
 }
